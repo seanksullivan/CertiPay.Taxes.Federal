@@ -8,6 +8,10 @@ namespace CertiPay.Taxes.Federal
 {
     public interface IFederalWithholdingCalculator
     {
-        // TODO
+        // TODO Calculate with allowances?
+
+        Decimal Calculate(int year, Decimal annualIncome, FilingStatus filingStatus = FilingStatus.Single, int withholdingAllownaces = 0);
     }
+
+
 }
