@@ -10,14 +10,15 @@
     <licenseUrl>https://github.com/CertiPay/Certipay.Federal.Taxes/blob/master/LICENSE.md</licenseUrl>
     <authors>CertiPay, Matt Wagner</authors>
     <owners>Matt Wagner</owners>
+
+    <dependencies>
+      <dependency id="CertiPay.Payroll.Common" />
+    </dependencies>
   </metadata>
+
   <files>
     <file src="\bin\Release\CertiPay.Federal.Taxes*" target="lib\net451" />
     <file src="..\README.md" target="tools" />
     <file src="..\LICENSE.md" target="tools" />
   </files>
-
-  <dependencies>
-    <dependency id="CertiPay.Payroll.Common" />
-  </dependencies>
 </package>
