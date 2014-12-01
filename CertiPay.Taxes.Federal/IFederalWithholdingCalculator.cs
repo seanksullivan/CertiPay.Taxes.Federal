@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CertiPay.Payroll.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace CertiPay.Taxes.Federal
     {
         // TODO Calculate with allowances?
 
-        Decimal Calculate(int year, Decimal annualIncome, FilingStatus filingStatus = FilingStatus.Single, int withholdingAllownaces = 0);
+        Decimal Calculate(int year, Decimal annualIncome, EmployeeTaxFilingStatus filingStatus = FilingStatus.Single, int withholdingAllownaces = 0);
     }
 
 
