@@ -47,7 +47,10 @@ namespace CertiPay.Taxes.Federal.Tests
                     yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.Single).Returns(2864.25);
                     yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.Single).Returns(22575.75);
                     yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.Single).Returns(21175.47);
-
+                    yield return new TestCaseData(36900M, EmployeeTaxFilingStatus.Single).Returns(5081.25);
+                    yield return new TestCaseData(405100M, EmployeeTaxFilingStatus.Single).Returns(117541.25);
+                    yield return new TestCaseData(200M, EmployeeTaxFilingStatus.Single).Returns(20);
+                    
                     // Married Filing Jointly
 
                     yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(36247.00);
