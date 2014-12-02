@@ -51,6 +51,7 @@
     <Compile Include="IMedicareCalculator.cs" />
     <Compile Include="ISocialSecurityCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaxTable.cs" />
     <Compile Include="TaxTable2014.cs" />
     <Compile Include="TaxTableEntry.cs" />
   </ItemGroup>

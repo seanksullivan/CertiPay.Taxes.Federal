@@ -59,7 +59,12 @@ namespace CertiPay.Taxes.Federal.Tests
 
                     // Married Filing Single
 
-                    // TODO
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(45702.25);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(20223.50);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(7106.25);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(2864.25);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(23023.50);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(21623.22);
 
                     // Widower -- Should match Married Filing Jointly
 
@@ -72,7 +77,16 @@ namespace CertiPay.Taxes.Federal.Tests
 
                     // Head of Household
 
-                    // TODO
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(39586.00);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(18162.50);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(6102.50);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(2670.50);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(20662.50);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(19412.25);
+
+                    // Should fail
+
+                    yield return new TestCaseData(-10M, EmployeeTaxFilingStatus.Single).Throws(typeof(ArgumentOutOfRangeException));
                 }
             }
         }

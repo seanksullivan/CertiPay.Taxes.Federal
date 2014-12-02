@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CertiPay.Taxes.Federal
 {
@@ -16,8 +14,9 @@ namespace CertiPay.Taxes.Federal
 
     public class FederalWithholdingCalculator : IFederalWithholdingCalculator
     {
-        // TODO: This might be dynamic, taken from what tables are loaded into memory
         public const int Minimum_Year = 2014;
+
+        private static readonly IEnumerable<TaxTable> tax_tables = new[] { new TaxTable2014() };
 
         public Decimal Calculate(int year, decimal annualIncome, EmployeeTaxFilingStatus filingStatus = EmployeeTaxFilingStatus.Single, int withholdingAllowances = 0)
         {
@@ -27,24 +26,16 @@ namespace CertiPay.Taxes.Federal
 
             if (withholdingAllowances < 0) throw new ArgumentOutOfRangeException("withholdingAllowances cannot be negative");
 
-            // Get the appropriate table by year and filing status
+            // Get the appropriate table by year
+            // Then figure out the correct row based on filing status and income
 
-            // HACK: Hard-coded for 2014 and certain statuses for now!
-
-            TaxTableEntry entry = default(TaxTableEntry);
-
-            if (filingStatus == EmployeeTaxFilingStatus.Single)
-            {
-                entry = TaxTable2014.Single.Where(e => e.Minimum <= annualIncome && annualIncome < e.Maximum).Single();
-            }
-            else if (filingStatus == EmployeeTaxFilingStatus.MarriedFilingJointly)
-            {
-                entry = TaxTable2014.MarriedFilingJointly.Where(e => e.Minimum <= annualIncome && annualIncome < e.Maximum).Single();
-            }
-            else if (filingStatus == EmployeeTaxFilingStatus.WidowerWithDependentChild)
-            {
-                entry = TaxTable2014.Widower.Where(e => e.Minimum <= annualIncome && annualIncome < e.Maximum).Single();
-            }
+            TaxTableEntry entry = tax_tables
+                .Where(t => t.Year == year)
+                .SelectMany(t => t.Entries)
+                .Where(e => e.TaxFilingStatus == filingStatus)
+                .Where(e => e.Minimum <= annualIncome)
+                .Where(e => annualIncome < e.Maximum)
+                .Single();
 
             // Calculate the appropriate amount of withholdings based in annual income
 
