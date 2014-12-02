@@ -47,6 +47,17 @@ namespace CertiPay.Taxes.Federal
             new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 457600, Maximum = decimal.MaxValue, Base = 127962.50m, Percentage = 39.6m}
         };
 
+        public static IEnumerable<TaxTableEntry> Widower = new[]
+        {
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 0, Maximum = 18150, Base = 0, Percentage = 10},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 18150, Maximum = 73800, Base =1815, Percentage = 15},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum =73800, Maximum = 148850, Base = 10162.50m, Percentage = 25},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum =148850, Maximum = 226850, Base = 28925, Percentage = 28},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 226850, Maximum = 405100, Base = 50765, Percentage = 33},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 405100, Maximum = 457600, Base = 109587.50m, Percentage = 35},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 457600, Maximum = decimal.MaxValue, Base = 127962.50m, Percentage = 39.6m}
+        };
+
         //Schedule Y-2 — Married Filing Separately
         //If taxable income is over--	But not over--	The tax is:
         //$0	$9.075	10% of the amount over $0

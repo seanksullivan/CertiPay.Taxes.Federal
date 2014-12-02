@@ -41,6 +41,10 @@ namespace CertiPay.Taxes.Federal
             {
                 entry = TaxTable2014.MarriedFilingJointly.Where(e => e.Minimum <= annualIncome && annualIncome < e.Maximum).Single();
             }
+            else if (filingStatus == EmployeeTaxFilingStatus.WidowerWithDependentChild)
+            {
+                entry = TaxTable2014.Widower.Where(e => e.Minimum <= annualIncome && annualIncome < e.Maximum).Single();
+            }
 
             // Calculate the appropriate amount of withholdings based in annual income
 
