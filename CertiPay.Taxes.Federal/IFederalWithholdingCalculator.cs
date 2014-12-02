@@ -14,9 +14,9 @@ namespace CertiPay.Taxes.Federal
 
     public class FederalWithholdingCalculator : IFederalWithholdingCalculator
     {
-        public const int Minimum_Year = 2014;
+        public const int Minimum_Year = 2013;
 
-        private static readonly IEnumerable<TaxTable> tax_tables = new[] { new TaxTable2014() };
+        private static readonly IEnumerable<TaxTable> tax_tables = new TaxTable[] { new TaxTable2013(), new TaxTable2014() };
 
         public Decimal Calculate(int year, decimal annualIncome, EmployeeTaxFilingStatus filingStatus = EmployeeTaxFilingStatus.Single, int withholdingAllowances = 0)
         {
