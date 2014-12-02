@@ -16,8 +16,6 @@ namespace CertiPay.Taxes.Federal
     {
         public const int Minimum_Year = 2013;
 
-        private static readonly IEnumerable<TaxTable> tax_tables = new TaxTable[] { new TaxTable2013(), new TaxTable2014() };
-
         public Decimal Calculate(int year, decimal annualIncome, EmployeeTaxFilingStatus filingStatus = EmployeeTaxFilingStatus.Single, int withholdingAllowances = 0)
         {
             if (year < Minimum_Year) throw new ArgumentOutOfRangeException("Unable to process tax years before " + Minimum_Year);
@@ -29,7 +27,8 @@ namespace CertiPay.Taxes.Federal
             // Get the appropriate table by year
             // Then figure out the correct row based on filing status and income
 
-            TaxTableEntry entry = tax_tables
+            TaxTableEntry entry = TaxTables
+                .Values
                 .Where(t => t.Year == year)
                 .SelectMany(t => t.Brackets)
                 .Where(e => e.TaxFilingStatus == filingStatus)

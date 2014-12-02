@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FederalWithholdingCalculatorTests.cs" />
+    <Compile Include="FICACalculatorTests_2013.cs" />
+    <Compile Include="FICACalculatorTests_2014.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WithholdingTests2014.cs" />
+    <Compile Include="FederalWithholdingCalculatorTests_2014.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

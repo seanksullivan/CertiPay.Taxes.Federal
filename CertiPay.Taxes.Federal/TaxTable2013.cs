@@ -1,4 +1,5 @@
 ﻿using CertiPay.Payroll.Common;
+using System;
 using System.Collections.Generic;
 
 namespace CertiPay.Taxes.Federal
@@ -6,6 +7,14 @@ namespace CertiPay.Taxes.Federal
     public sealed class TaxTable2013 : TaxTable
     {
         public int Year { get { return 2013; } }
+
+        public Decimal SocialSecurityWageBase { get { return 113700; } }
+
+        public Decimal FICA_EmployeePercentage { get { return 6.2m; } }
+
+        public Decimal FICA_EmployerPercentage { get { return FICA_EmployeePercentage; } }
+
+        public Decimal MedicarePercentage { get { return 1.450m; } }
 
         public IEnumerable<TaxTableEntry> Brackets
         {
@@ -30,7 +39,7 @@ namespace CertiPay.Taxes.Federal
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 183250, Maximum = 398350, Base = 44603.25m, Percentage = 33},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 398350, Maximum = 400000, Base = 115586.25m, Percentage = 35},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 400000, Maximum = decimal.MaxValue, Base = 116163.75m, Percentage = 39.6m},
- 
+
                     //Schedule Y-1 — Married Filing Jointly or Qualifying Widow(er)
                     //If taxable income is over--	But not over--	The tax is:
                     //$0	$17,850	10% of the amount over $0

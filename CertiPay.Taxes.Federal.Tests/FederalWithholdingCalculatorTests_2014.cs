@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace CertiPay.Taxes.Federal.Tests
 {
-    public class WithholdingTests2014
+    public class FederalWithholdingCalculatorTests_2014
     {
         private const int YEAR = 2014;
 

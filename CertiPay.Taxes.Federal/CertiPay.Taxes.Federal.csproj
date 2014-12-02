@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FICAResult.cs" />
     <Compile Include="IFederalWithholdingCalculator.cs" />
     <Compile Include="IFICACalculator.cs" />
     <Compile Include="IMedicareCalculator.cs" />
