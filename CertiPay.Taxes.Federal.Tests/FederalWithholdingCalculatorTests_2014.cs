@@ -30,7 +30,7 @@ namespace CertiPay.Taxes.Federal.Tests
         [Test, TestCaseSource(typeof(TestCases), "Tests")]
         public Decimal Verify_Withholding_2014(Decimal annualIncome, EmployeeTaxFilingStatus status)
         {
-            return _calculator.Calculate(YEAR, annualIncome, status, 0);
+            return _calculator.Calculate(YEAR, annualIncome, status);
         }
 
         public class TestCases
@@ -50,7 +50,7 @@ namespace CertiPay.Taxes.Federal.Tests
                     yield return new TestCaseData(36900M, EmployeeTaxFilingStatus.Single).Returns(5081.25);
                     yield return new TestCaseData(405100M, EmployeeTaxFilingStatus.Single).Returns(117541.25);
                     yield return new TestCaseData(200M, EmployeeTaxFilingStatus.Single).Returns(20);
-                    
+
                     // Married Filing Jointly
 
                     yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(36247.00);

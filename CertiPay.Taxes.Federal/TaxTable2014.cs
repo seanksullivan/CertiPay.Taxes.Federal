@@ -103,5 +103,35 @@ namespace CertiPay.Taxes.Federal
                 };
             }
         }
+
+        public IEnumerable<AllowanceValue> Allowances
+        {
+            get
+            {
+                //From the IRS Circular E Employer's Tax Guide
+                //Table 5. Percentage Method—2014 Amount
+                //for One Withholding Allowance
+                //Payroll Period One Withholding
+                //Allowance
+                //Weekly .......................... $ 76.00
+                //Biweekly ......................... 151.90
+                //Semimonthly ...................... 164.60
+                //Monthly .......................... 329.20
+                //Quarterly ......................... 987.50
+                //Semiannually ...................... 1,975.00
+                //Annually ......................... 3,950.00
+                //Daily or miscellaneous (each day of the payroll
+                //period) .......................... 15.20
+
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Weekly, Value = 76.00m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.BiWeekly, Value = 151.90m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.SemiMonthly, Value = 164.60m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Monthly, Value = 329.20m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Quarterly, Value = 987.50m };
+                //yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Semiannually, Value = 1975.00m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Annually, Value = 3950.00m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Daily, Value = 15.20m };
+            }
+        }
     }
 }

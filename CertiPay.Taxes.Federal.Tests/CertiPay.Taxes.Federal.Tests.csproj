@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnualizedIncomeCalculatorTests_2014.cs" />
     <Compile Include="FederalWithholdingCalculatorTests.cs" />
     <Compile Include="FICACalculatorTests_2013.cs" />
     <Compile Include="FICACalculatorTests_2014.cs" />

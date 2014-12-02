@@ -1,5 +1,4 @@
-﻿using CertiPay.Payroll.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace CertiPay.Taxes.Federal
@@ -21,6 +20,17 @@ namespace CertiPay.Taxes.Federal
             get
             {
                 return new TaxTableEntry[]
+                {
+                    // TODO
+                };
+            }
+        }
+
+        public IEnumerable<AllowanceValue> Allowances
+        {
+            get
+            {
+                return new AllowanceValue[]
                 {
                     // TODO
                 };

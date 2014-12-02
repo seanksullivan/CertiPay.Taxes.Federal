@@ -18,11 +18,5 @@ namespace CertiPay.Taxes.Federal.Tests
         {
             _calculator.Calculate(2013, -10);
         }
-
-        [Test, ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Verify_Negative_Allowances()
-        {
-            _calculator.Calculate(2013, 100, withholdingAllowances: -5);
-        }
     }
 }

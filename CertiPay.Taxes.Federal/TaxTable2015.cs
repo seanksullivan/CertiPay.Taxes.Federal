@@ -26,5 +26,16 @@ namespace CertiPay.Taxes.Federal
                 };
             }
         }
+
+        public IEnumerable<AllowanceValue> Allowances
+        {
+            get
+            {
+                return new AllowanceValue[]
+                {
+                    // TODO
+                };
+            }
+        }
     }
 }

@@ -5,6 +5,10 @@ namespace CertiPay.Taxes.Federal
 {
     public static class TaxTables
     {
+        // TODO Update this when the other tables are filled in
+
+        public const int Minimum_Year = 2013;
+
         public static IEnumerable<TaxTable> Values
         {
             get
@@ -26,6 +30,8 @@ namespace CertiPay.Taxes.Federal
         int Year { get; }
 
         IEnumerable<TaxTableEntry> Brackets { get; }
+
+        IEnumerable<AllowanceValue> Allowances { get; }
 
         Decimal SocialSecurityWageBase { get; }
 
