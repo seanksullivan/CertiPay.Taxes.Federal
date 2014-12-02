@@ -7,7 +7,7 @@ namespace CertiPay.Taxes.Federal
     {
         public int Year { get { return 2013; } }
 
-        public IEnumerable<TaxTableEntry> Entries
+        public IEnumerable<TaxTableEntry> Brackets
         {
             get
             {

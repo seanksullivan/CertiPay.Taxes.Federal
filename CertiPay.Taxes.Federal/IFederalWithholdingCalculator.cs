@@ -31,7 +31,7 @@ namespace CertiPay.Taxes.Federal
 
             TaxTableEntry entry = tax_tables
                 .Where(t => t.Year == year)
-                .SelectMany(t => t.Entries)
+                .SelectMany(t => t.Brackets)
                 .Where(e => e.TaxFilingStatus == filingStatus)
                 .Where(e => e.Minimum <= annualIncome)
                 .Where(e => annualIncome < e.Maximum)
