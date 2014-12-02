@@ -8,7 +8,7 @@ namespace CertiPay.Taxes.Federal
     /// </summary>
     public interface IFICACalculator
     {
-        FICAResult Calculate(int year, Decimal annualizedIncome);
+        FICAResult Calculate(int year, Decimal adjustedGrossIncome);
     }
 
     public class FICACalculator : IFICACalculator
@@ -59,7 +59,7 @@ namespace CertiPay.Taxes.Federal
         // employees. FICA initially did not apply to state and local governments, which were later given the option
         // of participating. Over time, most have elected to participate but a substantial number remain outside the system.
 
-        public FICAResult Calculate(int year, decimal annualizedIncome)
+        public FICAResult Calculate(int year, decimal adjustedGrossIncome)
         {
             // TODO We don't handle self-employed poeple here
 
@@ -67,13 +67,13 @@ namespace CertiPay.Taxes.Federal
 
             TaxTable table = TaxTables.Values.Single(t => t.Year == year);
 
-            Decimal fica_taxable = Math.Min(table.SocialSecurityWageBase, annualizedIncome);
+            Decimal fica_taxable = Math.Min(table.SocialSecurityWageBase, adjustedGrossIncome);
 
             result.SocialSecurity = Math.Round(fica_taxable * (table.FICA_EmployeePercentage / 100), 2, MidpointRounding.ToEven);
 
             result.SocialSecurity_Employer = Math.Round(fica_taxable * (table.FICA_EmployerPercentage / 100), 2, MidpointRounding.ToEven);
 
-            result.Medicare = result.Medicare_Employer = Math.Round(annualizedIncome * (table.MedicarePercentage / 100), 2, MidpointRounding.ToEven);
+            result.Medicare = result.Medicare_Employer = Math.Round(adjustedGrossIncome * (table.MedicarePercentage / 100), 2, MidpointRounding.ToEven);
 
             return result;
         }
