@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CertiPay.Payroll.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace CertiPay.Taxes.Federal
 {
     public class TaxTableEntry
     {
+        public EmployeeTaxFilingStatus TaxFilingStatus { get; set; }
+
         public Decimal Minimum { get; set; }
 
         public Decimal Maximum { get; set; }

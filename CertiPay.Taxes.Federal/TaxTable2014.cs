@@ -1,12 +1,9 @@
-﻿using System;
+﻿using CertiPay.Payroll.Common;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CertiPay.Taxes.Federal
 {
-    public sealed class TaxTable2013
+    public sealed class TaxTable2014
     {
         //Schedule X — Single
         //If taxable income is over--	But not over--	The tax is:
@@ -20,13 +17,13 @@ namespace CertiPay.Taxes.Federal
 
         public static IEnumerable<TaxTableEntry> Single = new[]
         {
-            new TaxTableEntry{ Minimum = 0, Maximum = 9075, Base = 0, Percentage = 10},
-            new TaxTableEntry{ Minimum = 9075, Maximum = 36900, Base =907.50m, Percentage = 15},
-            new TaxTableEntry{ Minimum =36900, Maximum = 89350, Base = 5081.25m, Percentage = 25},
-            new TaxTableEntry{ Minimum =89350, Maximum = 186350, Base = 18193.75m, Percentage = 28},
-            new TaxTableEntry{ Minimum = 186350, Maximum = 405100, Base = 45353.75m, Percentage = 33},
-            new TaxTableEntry{ Minimum = 405100, Maximum = 406750, Base = 117541.25m, Percentage = 35},
-            new TaxTableEntry{ Minimum = 406750, Maximum = decimal.MaxValue, Base = 118118.75m, Percentage = 39.6m}
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 0, Maximum = 9075, Base = 0, Percentage = 10},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 9075, Maximum = 36900, Base =907.50m, Percentage = 15},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum =36900, Maximum = 89350, Base = 5081.25m, Percentage = 25},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum =89350, Maximum = 186350, Base = 18193.75m, Percentage = 28},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 186350, Maximum = 405100, Base = 45353.75m, Percentage = 33},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 405100, Maximum = 406750, Base = 117541.25m, Percentage = 35},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 406750, Maximum = decimal.MaxValue, Base = 118118.75m, Percentage = 39.6m}
         };
 
         //Schedule Y-1 — Married Filing Jointly or Qualifying Widow(er)
@@ -41,13 +38,13 @@ namespace CertiPay.Taxes.Federal
 
         public static IEnumerable<TaxTableEntry> MarriedFilingJointly = new[]
         {
-            new TaxTableEntry{ Minimum = 0, Maximum = 18150, Base = 0, Percentage = 10},
-            new TaxTableEntry{ Minimum = 18150, Maximum = 73800, Base =1815, Percentage = 15},
-            new TaxTableEntry{ Minimum =73800, Maximum = 148850, Base = 10162.50m, Percentage = 25},
-            new TaxTableEntry{ Minimum =148850, Maximum = 226850, Base = 28925, Percentage = 28},
-            new TaxTableEntry{ Minimum = 226850, Maximum = 405100, Base = 50765, Percentage = 33},
-            new TaxTableEntry{ Minimum = 405100, Maximum = 457600, Base = 109587.50m, Percentage = 35},
-            new TaxTableEntry{ Minimum = 457600, Maximum = decimal.MaxValue, Base = 127962.50m, Percentage = 39.6m}
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 0, Maximum = 18150, Base = 0, Percentage = 10},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 18150, Maximum = 73800, Base =1815, Percentage = 15},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum =73800, Maximum = 148850, Base = 10162.50m, Percentage = 25},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum =148850, Maximum = 226850, Base = 28925, Percentage = 28},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 226850, Maximum = 405100, Base = 50765, Percentage = 33},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 405100, Maximum = 457600, Base = 109587.50m, Percentage = 35},
+            new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 457600, Maximum = decimal.MaxValue, Base = 127962.50m, Percentage = 39.6m}
         };
 
         //Schedule Y-2 — Married Filing Separately
@@ -69,6 +66,5 @@ namespace CertiPay.Taxes.Federal
         //$206,600	$405,100	$48,434 plus 33% of the amount over $206,600
         //$405,100	$432,200	$113,939 plus 35% of the amount over $405,100
         //$432,200	no limit	$123,424 plus 39.6% of the amount over $432,200
-
     }
 }
