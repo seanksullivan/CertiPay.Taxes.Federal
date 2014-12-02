@@ -49,8 +49,6 @@
     <Compile Include="FICAResult.cs" />
     <Compile Include="IFederalWithholdingCalculator.cs" />
     <Compile Include="IFICACalculator.cs" />
-    <Compile Include="IMedicareCalculator.cs" />
-    <Compile Include="ISocialSecurityCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaxTable.cs" />
     <Compile Include="TaxTable2011.cs" />
