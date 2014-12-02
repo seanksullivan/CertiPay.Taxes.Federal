@@ -12,12 +12,12 @@
     <owners>Matt Wagner</owners>
 
     <dependencies>
-      <dependency id="CertiPay.Payroll.Common" />
+      <dependency id="CertiPay.Payroll.Common" version="0.0.31" />
     </dependencies>
   </metadata>
 
   <files>
-    <file src="\bin\Release\CertiPay.Federal.Taxes*" target="lib\net451" />
+    <file src="bin\Release\CertiPay.Taxes.Federal*" target="lib\net451" />
     <file src="..\README.md" target="tools" />
     <file src="..\LICENSE.md" target="tools" />
   </files>
