@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CertiPay.Payroll.Common, Version=0.0.31.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CertiPay.Payroll.Common, Version=0.0.35.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CertiPay.Payroll.Common.0.0.31\lib\net451\CertiPay.Payroll.Common.dll</HintPath>
+      <HintPath>..\packages\CertiPay.Payroll.Common.0.0.35\lib\net451\CertiPay.Payroll.Common.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>

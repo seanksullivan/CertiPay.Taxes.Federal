@@ -31,7 +31,7 @@ namespace CertiPay.Taxes.Federal
 
             Decimal netPayForPeriod = grossIncomeForPeriod - (withholdingAllowances * allowancesValue.Value);
 
-            return frequency.CalculateAnnualized(netPayForPeriod);
+            return frequency.CalculateAnnualized(netPayForPeriod).Round();
         }
     }
 }

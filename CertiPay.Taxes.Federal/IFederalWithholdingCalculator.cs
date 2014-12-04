@@ -34,7 +34,7 @@ namespace CertiPay.Taxes.Federal
 
             // Formula is Base amount + the difference between the income and the minimum for the bracket * the percentage in that bracket
 
-            return entry.Base + ((annualIncome - entry.Minimum) * (entry.Percentage / 100));
+            return (entry.Base + ((annualIncome - entry.Minimum) * (entry.Percentage / 100))).Round();
         }
     }
 }

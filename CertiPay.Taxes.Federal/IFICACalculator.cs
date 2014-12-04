@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CertiPay.Payroll.Common;
+using System;
 using System.Linq;
 
 namespace CertiPay.Taxes.Federal
@@ -69,11 +70,11 @@ namespace CertiPay.Taxes.Federal
 
             Decimal fica_taxable = Math.Min(table.SocialSecurityWageBase, adjustedGrossIncome);
 
-            result.SocialSecurity = Math.Round(fica_taxable * (table.FICA_EmployeePercentage / 100), 2, MidpointRounding.ToEven);
+            result.SocialSecurity = (fica_taxable * (table.FICA_EmployeePercentage / 100)).Round();
 
-            result.SocialSecurity_Employer = Math.Round(fica_taxable * (table.FICA_EmployerPercentage / 100), 2, MidpointRounding.ToEven);
+            result.SocialSecurity_Employer = (fica_taxable * (table.FICA_EmployerPercentage / 100)).Round();
 
-            result.Medicare = result.Medicare_Employer = Math.Round(adjustedGrossIncome * (table.MedicarePercentage / 100), 2, MidpointRounding.ToEven);
+            result.Medicare = result.Medicare_Employer = (adjustedGrossIncome * (table.MedicarePercentage / 100)).Round();
 
             return result;
         }
