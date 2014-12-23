@@ -53,6 +53,7 @@
     <Compile Include="FederalWithholdingCalculatorTests.cs" />
     <Compile Include="FICACalculatorTests_2013.cs" />
     <Compile Include="FICACalculatorTests_2014.cs" />
+    <Compile Include="FUTACalculatorTests_2014.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FederalWithholdingCalculatorTests_2014.cs" />
   </ItemGroup>

@@ -15,6 +15,10 @@ namespace CertiPay.Taxes.Federal
 
         public Decimal MedicarePercentage { get { return 1.450m; } }
 
+        public Decimal FUTA_EmployerPercentage { get { return 6.0m; } }
+
+        public Decimal FUTA_WageBase { get { return 7000; } }
+
         public IEnumerable<TaxTableEntry> Brackets
         {
             get

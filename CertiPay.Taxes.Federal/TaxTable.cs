@@ -40,5 +40,15 @@ namespace CertiPay.Taxes.Federal
         Decimal FICA_EmployerPercentage { get; }
 
         Decimal MedicarePercentage { get; }
+
+        /// <summary>
+        /// The percentage of Federal Unemployment Insurnace Tax charged to the employer
+        /// </summary>
+        Decimal FUTA_EmployerPercentage { get; }
+
+        /// <summary>
+        /// The amount that the FUTA percentage is calculated off of, i.e. 6.0% of the first $7,000 wages
+        /// </summary>
+        Decimal FUTA_WageBase { get; }
     }
 }

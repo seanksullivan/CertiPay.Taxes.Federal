@@ -15,6 +15,12 @@ namespace CertiPay.Taxes.Federal
 
         public Decimal MedicarePercentage { get { return 1.450m; } }
 
+        // Through June 30, 2011, this included the extra 0.2 before going back to 6.0 for the rest of the year.
+        // Good luck if you're calculating old taxes.
+        public Decimal FUTA_EmployerPercentage { get { return 6.2m; } }
+
+        public Decimal FUTA_WageBase { get { return 7000; } }
+
         public IEnumerable<TaxTableEntry> Brackets
         {
             get
