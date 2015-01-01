@@ -64,11 +64,17 @@ namespace CertiPay.Taxes.Federal
         {
             // TODO We don't handle self-employed poeple here
 
-            var result = new FICAResult { };
+            if (year < TaxTables.Minimum_Year) throw new ArgumentOutOfRangeException("Unable to process tax years before " + TaxTables.Minimum_Year);
 
-            TaxTable table = TaxTables.Values.Single(t => t.Year == year);
+            if (adjustedGrossIncome < 0) throw new ArgumentOutOfRangeException("AdjustedGrossIncome cannot be negative");
+
+            TaxTable table = TaxTables.Values.SingleOrDefault(t => t.Year == year);
+
+            if (table == null) throw new ArgumentOutOfRangeException("Unable to find tax table that matches parameters");
 
             Decimal fica_taxable = Math.Min(table.SocialSecurityWageBase, adjustedGrossIncome);
+
+            var result = new FICAResult { };
 
             result.SocialSecurity = (fica_taxable * (table.FICA_EmployeePercentage / 100)).Round();
 

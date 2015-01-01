@@ -18,5 +18,11 @@ namespace CertiPay.Taxes.Federal.Tests
         {
             _calculator.Calculate(2013, -10);
         }
+
+        [Test, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Verify_Year_Without_Tables()
+        {
+            _calculator.Calculate(2050, 100);
+        }
     }
 }

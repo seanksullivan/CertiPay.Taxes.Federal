@@ -30,7 +30,9 @@ namespace CertiPay.Taxes.Federal
                 .Where(e => e.TaxFilingStatus == filingStatus)
                 .Where(e => e.Minimum <= annualIncome)
                 .Where(e => annualIncome < e.Maximum)
-                .Single();
+                .SingleOrDefault();
+
+            if (entry == null) throw new ArgumentOutOfRangeException("Unable to find tax table that matches parameters");
 
             // Formula is Base amount + the difference between the income and the minimum for the bracket * the percentage in that bracket
 

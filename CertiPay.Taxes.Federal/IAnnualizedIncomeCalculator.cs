@@ -27,7 +27,9 @@ namespace CertiPay.Taxes.Federal
                     .Where(t => t.Year == year)
                     .SelectMany(t => t.Allowances)
                     .Where(a => a.PayrollFrequency == frequency)
-                    .Single();
+                    .SingleOrDefault();
+
+            if (allowancesValue == null) throw new ArgumentOutOfRangeException("Unable to find tax table that matches parameters");
 
             Decimal netPayForPeriod = grossIncomeForPeriod - (withholdingAllowances * allowancesValue.Value);
 
