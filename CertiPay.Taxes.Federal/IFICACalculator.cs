@@ -74,6 +74,8 @@ namespace CertiPay.Taxes.Federal
 
             Decimal fica_taxable = Math.Min(table.SocialSecurityWageBase, adjustedGrossIncome);
 
+            // TODO We're not taking into account the Medicare Surtax (0.9% for income over $200k) that was implemented as part of the ACA in tax years 2013+
+
             var result = new FICAResult { };
 
             result.SocialSecurity = (fica_taxable * (table.FICA_EmployeePercentage / 100)).Round();
