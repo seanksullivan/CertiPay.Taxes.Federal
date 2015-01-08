@@ -9,6 +9,9 @@ namespace CertiPay.Taxes.Federal
 
         public const int Minimum_Year = 2013;
 
+        /// <summary>
+        /// A list of configured tax tables in the library
+        /// </summary>
         public static IEnumerable<TaxTable> Values
         {
             get
@@ -27,18 +30,39 @@ namespace CertiPay.Taxes.Federal
 
     public interface TaxTable
     {
+        /// <summary>
+        /// The tax year the table is applicable for
+        /// </summary>
         int Year { get; }
 
+        /// <summary>
+        /// A list of the table entries that form the income brackets
+        /// </summary>
         IEnumerable<TaxTableEntry> Brackets { get; }
 
+        /// <summary>
+        /// A list of the value of allowances for different filing types
+        /// </summary>
         IEnumerable<AllowanceValue> Allowances { get; }
 
+        /// <summary>
+        /// The max income that social security taxes are calculated against
+        /// </summary>
         Decimal SocialSecurityWageBase { get; }
 
+        /// <summary>
+        /// The employee's percentage of the FICA taxes
+        /// </summary>
         Decimal FICA_EmployeePercentage { get; }
 
+        /// <summary>
+        /// The employer's percentage of the FICA taxes
+        /// </summary>
         Decimal FICA_EmployerPercentage { get; }
 
+        /// <summary>
+        /// The tax percentage charged for Medicare contributions
+        /// </summary>
         Decimal MedicarePercentage { get; }
 
         /// <summary>
