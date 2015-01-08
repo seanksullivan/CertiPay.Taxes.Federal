@@ -35,6 +35,8 @@ namespace CertiPay.Taxes.Federal
         //be a credit reduction state. See the Instructions for Form 940 to determine the credit.
         //In some states, the wages subject to state unemployment tax are the same as the wages subject to FUTA tax. However, certain states exclude some types of wages from state unemployment tax, even though they are subject to FUTA tax (for example, wages paid to corporate officers, certain payments of sick pay by unions, and certain fringe benefits). In such a case, you may be required to deposit more than 0.6% FUTA tax on those wages. See the Instructions for Form 940 for further guidance.
 
+        // 2015, the FUTA Tax Rate remains 6.0%
+
         public Decimal Calculate(int year, Decimal adjustedGrossIncome)
         {
             TaxTable table = TaxTables.Values.Single(t => t.Year == year);

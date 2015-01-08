@@ -78,24 +78,19 @@ namespace CertiPay.Taxes.Federal
             {
                 //From the IRS Circular E Employer's Tax Guide
 
-                //The wage amounts shown in the Percentage Method
-                //Tables for Income Tax Withholding are net wages after
-                //the deduction for total withholding allowances. The
-                //withholding allowance amounts by payroll period have
-                //changed. For 2015, they are:
-                //Payroll Period
-                //One Withholding
+                //Table 5. Percentage Method—2015 Amount
+                //for One Withholding Allowance
+                //Payroll Period One Withholding
                 //Allowance
-                //Weekly $ 76.90
-                //Biweekly 153.80
-                //Semimonthly 166.70
-                //Monthly 333.30
-                //Quarterly 1,000.00
-                //Semiannually 2,000.00
-                //Annually 4,000.00
-                //Daily or Miscellaneous
-                //(each day of the payroll period)
-                //15.40
+                //Weekly .......................... $ 76.90
+                //Biweekly ......................... 153.80
+                //Semimonthly ...................... 166.70
+                //Monthly .......................... 333.30
+                //Quarterly ......................... 1,000.00
+                //Semiannually ...................... 2,000.00
+                //Annually ......................... 4,000.00
+                //Daily or miscellaneous (each day of the payroll
+                //period) .......................... 15.40
 
 
                 yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Weekly, Value = 76.90m };
