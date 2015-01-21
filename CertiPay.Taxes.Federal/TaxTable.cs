@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CertiPay.Payroll.Common;
+using System;
 using System.Collections.Generic;
 
 namespace CertiPay.Taxes.Federal
@@ -74,5 +75,16 @@ namespace CertiPay.Taxes.Federal
         /// The amount that the FUTA percentage is calculated off of, i.e. 6.0% of the first $7,000 wages
         /// </summary>
         Decimal FUTA_WageBase { get; }
+    }
+
+    /// <summary>
+    /// Represents the value of an allowance for calculating adjusted gross income from a W-4
+    /// for a given payroll frequency
+    /// </summary>
+    public class AllowanceValue
+    {
+        public PayrollFrequency PayrollFrequency { get; set; }
+
+        public Decimal Value { get; set; }
     }
 }
