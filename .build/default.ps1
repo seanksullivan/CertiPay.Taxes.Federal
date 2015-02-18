@@ -1,5 +1,9 @@
 $PSake.use_exit_on_error = $true
 
+$ProjectName = "CertiPay.Taxes.Federal"
+
+$SolutionFile = "$SolutionRoot\$ProjectName.sln"
+
 ## This comes from the build server iteration
 if(!$BuildNumber) { $BuildNumber = $env:APPVEYOR_BUILD_NUMBER }
 if(!$BuildNumber) { $BuildNumber = "0.1"}
@@ -39,11 +43,11 @@ Task Build -depends Restore-Packages, Update-AssemblyInfoFiles {
 }
 
 Task Package -depends Build {
-	exec { . $NuGet pack "$SolutionRoot\CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.nuspec" -Properties Configuration=$Configuration -OutputDirectory "$SolutionRoot" }
+	exec { . $NuGet pack "$SolutionRoot\$ProjectName\$ProjectName.nuspec" -Properties Configuration=$Configuration -OutputDirectory "$SolutionRoot" -Version "$Version" }
 }
 
 Task Test -depends Build, Install-NUnitRunner {
-	exec { . $NUnit "$SolutionRoot\CertiPay.Taxes.Federal.Tests\bin\$Configuration\CertiPay.Taxes.Federal.Tests.dll" /xml:"$SolutionRoot\CertiPay.Taxes.Federal.Tests.xml" }
+	exec { . $NUnit "$SolutionRoot\$ProjectName.Tests\bin\$Configuration\$ProjectName.Tests.dll" /xml:"$SolutionRoot\$ProjectName.Tests.xml" }
 }
 
 Task Clean {
