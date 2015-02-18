@@ -12,15 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D86F80
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{5BB1B9F7-D902-43CC-AF1B-D42D57044664}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{5BB1B9F7-D902-43CC-AF1B-D42D57044664}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
-		Build-Package.ps1 = Build-Package.ps1
-		Build.ps1 = Build.ps1
+		.build\Bootstrap.ps1 = .build\Bootstrap.ps1
 		CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.nuspec = CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.nuspec
+		.build\Common.psm1 = .build\Common.psm1
+		.build\default.ps1 = .build\default.ps1
 		LICENSE.md = LICENSE.md
 		README.md = README.md
-		Run-Tests.ps1 = Run-Tests.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertiPay.Taxes.Federal", "CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.csproj", "{110F659F-1918-4F56-A688-14294E0C7167}"
