@@ -1,12 +1,16 @@
 $PSake.use_exit_on_error = $true
 
+$Here = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
+$SolutionRoot = (Split-Path -parent $Here)
+
 $ProjectName = "CertiPay.Taxes.Federal"
 
 $SolutionFile = "$SolutionRoot\$ProjectName.sln"
 
 ## This comes from the build server iteration
 if(!$BuildNumber) { $BuildNumber = $env:APPVEYOR_BUILD_NUMBER }
-if(!$BuildNumber) { $BuildNumber = "0.1"}
+if(!$BuildNumber) { $BuildNumber = "1"}
 
 ## This comes from the Hg commit hash used to build
 if(!$CommitHash) { $CommitHash = $env:APPVEYOR_REPO_COMMIT }
@@ -19,13 +23,7 @@ if(!$Configuration) { $Configuration = "Release" }
 if(!$Version) { $Version = $env:APPVEYOR_BUILD_VERSION }
 if(!$Version) { $Version = "0.1.$BuildNumber" }
 
-$Here = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-
-$SolutionRoot = (Split-Path -parent $Here)
-
 Import-Module "$Here\Common" -DisableNameChecking
-
-$SolutionFile = "$SolutionRoot\CertiPay.Taxes.Federal.sln"
 
 $NuGet = Join-Path $SolutionRoot ".nuget\nuget.exe"
 
