@@ -19,8 +19,6 @@ namespace CertiPay.Taxes.Federal
             {
                 return new TaxTable[]
                 {
-                    new TaxTable2011(),
-                    new TaxTable2012(),
                     new TaxTable2013(),
                     new TaxTable2014(),
                     new TaxTable2015()

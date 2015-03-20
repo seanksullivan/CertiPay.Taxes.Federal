@@ -51,8 +51,6 @@
     <Compile Include="IFUTACalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaxTable.cs" />
-    <Compile Include="TaxTable2011.cs" />
-    <Compile Include="TaxTable2012.cs" />
     <Compile Include="TaxTable2013.cs" />
     <Compile Include="TaxTable2015.cs" />
     <Compile Include="TaxTable2014.cs" />

@@ -20,7 +20,6 @@ namespace CertiPay.Taxes.Federal
 
         public Decimal FUTA_WageBase { get { return 7000; } }
 
-
         public IEnumerable<TaxTableEntry> Brackets
         {
             get
@@ -91,7 +90,6 @@ namespace CertiPay.Taxes.Federal
                 //Annually ......................... 4,000.00
                 //Daily or miscellaneous (each day of the payroll
                 //period) .......................... 15.40
-
 
                 yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Weekly, Value = 76.90m };
                 yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.BiWeekly, Value = 153.80m };
