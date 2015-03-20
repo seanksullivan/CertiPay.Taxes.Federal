@@ -5,6 +5,7 @@ using System.Collections;
 
 namespace CertiPay.Taxes.Federal.Tests
 {
+    [Year(YEAR)]
     public class AnnualizedIncomeCalculatorTests_2015
     {
         private const int YEAR = 2015;
@@ -12,7 +13,7 @@ namespace CertiPay.Taxes.Federal.Tests
         private readonly IAnnualizedIncomeCalculator _calculator = new AnnualizedIncomeCalculator { };
 
         [Test, TestCaseSource(typeof(TestCases), "Tests")]
-        public Decimal Verify_Annual_Income_in_2015(Decimal payperiodIncome, PayrollFrequency frequency, int withholdingAllowances)
+        public Decimal Verify_Annual_Income(Decimal payperiodIncome, PayrollFrequency frequency, int withholdingAllowances)
         {
             return _calculator.Calculate(YEAR, payperiodIncome, frequency, withholdingAllowances);
         }

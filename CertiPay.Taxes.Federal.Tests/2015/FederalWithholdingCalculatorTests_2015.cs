@@ -5,6 +5,7 @@ using System.Collections;
 
 namespace CertiPay.Taxes.Federal.Tests
 {
+    [Year(YEAR)]
     public class FederalWithholdingCalculatorTests_2015
     {
         private const int YEAR = 2015;
@@ -12,7 +13,7 @@ namespace CertiPay.Taxes.Federal.Tests
         private readonly IFederalWithholdingCalculator _calculator = new FederalWithholdingCalculator { };
 
         [Test]
-        public void Verify_Valid_Year_2015()
+        public void Verify_Valid_Year()
         {
             Assert.NotNull(_calculator.Calculate(YEAR, 1000));
         }
@@ -28,7 +29,7 @@ namespace CertiPay.Taxes.Federal.Tests
         // $18,193.75 + $23,982 = $42,175.75.
 
         [Test, TestCaseSource(typeof(TestCases), "Tests")]
-        public Decimal Verify_Withholding_2015(Decimal annualIncome, EmployeeTaxFilingStatus status)
+        public Decimal Verify_Withholding(Decimal annualIncome, EmployeeTaxFilingStatus status)
         {
             return _calculator.Calculate(YEAR, annualIncome, status);
         }

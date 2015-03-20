@@ -3,6 +3,7 @@ using System;
 
 namespace CertiPay.Taxes.Federal.Tests
 {
+    [Year(YEAR)]
     public class FUTACalculatorTests_2014
     {
         private readonly IFUTACalculator _calculator = new FUTACalculator();

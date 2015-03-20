@@ -3,6 +3,7 @@ using System;
 
 namespace CertiPay.Taxes.Federal.Tests
 {
+    [Year(YEAR)]
     public class FICACalculatorTests_2014
     {
         private const int YEAR = 2014;

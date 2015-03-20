@@ -59,6 +59,7 @@
     <Compile Include="2014\FUTACalculatorTests_2014.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="2014\FederalWithholdingCalculatorTests_2014.cs" />
+    <Compile Include="YearAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
