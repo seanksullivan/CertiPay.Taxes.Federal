@@ -12,6 +12,24 @@ namespace CertiPay.Taxes.Federal.Tests
 
         private readonly IAnnualizedIncomeCalculator _calculator = new AnnualizedIncomeCalculator { };
 
+        [Theory]
+        public void Verify_Approximate_Allowance_Value([Random(0, 1000.00, 30)]Decimal payperiodIncome, PayrollFrequency frequency, [Range(0, 10)]int withholdingAllowances)
+        {
+            // Allowances are worth $4000/year in 2015.
+            // When I originally wrote the code for this, I was working from only part of the IRS publication that had
+            // the allowance values listed based on payroll frequency, when really those are just deviated from the
+            // total allowance value; this test runs through a subset of all possible inputs to verify that it's spitting out
+            // about what we expect it to.
+
+            Decimal allowance_value_annual = 3950;
+
+            Decimal tolerance = 50.00m;
+
+            Decimal expected = frequency.CalculateAnnualized(payperiodIncome) - (withholdingAllowances * allowance_value_annual);
+
+            Assert.That(_calculator.Calculate(YEAR, payperiodIncome, frequency, withholdingAllowances), Is.EqualTo(expected).Within(tolerance));
+        }
+
         [Test, TestCaseSource(typeof(TestCases), "Tests")]
         public Decimal Verify_Annual_Income(Decimal payperiodIncome, PayrollFrequency frequency, int withholdingAllowances)
         {
