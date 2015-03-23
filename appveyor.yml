@@ -7,7 +7,7 @@
 #   - Section names should be unique on each level.
 
 # version format
-version: 0.0.{build}
+version: 0.1.{build}
 
 shallow_clone: true
 
@@ -51,3 +51,8 @@ nuget:
 
 artifacts:
   - path: '**\CertiPay.Taxes.Federal.*.nupkg'
+
+deploy:
+- provider: NuGet
+  api_key:
+    secure: tj8axlUnLaJXMzsVHzNj6dT8VROvH1ChDSv9bKkQG4oNRB/6pI4oefW5WAhuIDIE
