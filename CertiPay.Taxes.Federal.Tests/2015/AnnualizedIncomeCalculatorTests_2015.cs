@@ -36,23 +36,23 @@ namespace CertiPay.Taxes.Federal.Tests
 
                     // Single allowances
 
-                    yield return new TestCaseData(10000m, PayrollFrequency.Annually, 1).Returns(6050);
-                    yield return new TestCaseData(10000m, PayrollFrequency.Quarterly, 1).Returns(36050);
-                    yield return new TestCaseData(1000m, PayrollFrequency.Monthly, 1).Returns(8049.60);
-                    yield return new TestCaseData(1000m, PayrollFrequency.SemiMonthly, 1).Returns(20049.60);
-                    yield return new TestCaseData(1000m, PayrollFrequency.BiWeekly, 1).Returns(22050.60);
-                    yield return new TestCaseData(1000m, PayrollFrequency.Weekly, 1).Returns(48048);
-                    yield return new TestCaseData(100m, PayrollFrequency.Daily, 1).Returns(22048);
+                    yield return new TestCaseData(10000m, PayrollFrequency.Annually, 1).Returns(6000);
+                    yield return new TestCaseData(10000m, PayrollFrequency.Quarterly, 1).Returns(36000);
+                    yield return new TestCaseData(1000m, PayrollFrequency.Monthly, 1).Returns(8000.40);
+                    yield return new TestCaseData(1000m, PayrollFrequency.SemiMonthly, 1).Returns(19999.20);
+                    yield return new TestCaseData(1000m, PayrollFrequency.BiWeekly, 1).Returns(22001.20);
+                    yield return new TestCaseData(1000m, PayrollFrequency.Weekly, 1).Returns(48001.20);
+                    yield return new TestCaseData(100m, PayrollFrequency.Daily, 1).Returns(21996);
 
                     // Multiple allowances
 
-                    yield return new TestCaseData(100000m, PayrollFrequency.Annually, 3).Returns(88150.00);
-                    yield return new TestCaseData(30000m, PayrollFrequency.Quarterly, 3).Returns(108150.00);
-                    yield return new TestCaseData(3000m, PayrollFrequency.Monthly, 3).Returns(24148.80);
-                    yield return new TestCaseData(3000m, PayrollFrequency.SemiMonthly, 3).Returns(60148.80);
-                    yield return new TestCaseData(3000m, PayrollFrequency.BiWeekly, 3).Returns(66151.80);
-                    yield return new TestCaseData(3000m, PayrollFrequency.Weekly, 3).Returns(144144.00);
-                    yield return new TestCaseData(100m, PayrollFrequency.Daily, 3).Returns(14144);
+                    yield return new TestCaseData(100000m, PayrollFrequency.Annually, 3).Returns(88000.00);
+                    yield return new TestCaseData(30000m, PayrollFrequency.Quarterly, 3).Returns(108000);
+                    yield return new TestCaseData(3000m, PayrollFrequency.Monthly, 3).Returns(24001.20);
+                    yield return new TestCaseData(3000m, PayrollFrequency.SemiMonthly, 3).Returns(59997.60);
+                    yield return new TestCaseData(3000m, PayrollFrequency.BiWeekly, 3).Returns(66003.60);
+                    yield return new TestCaseData(3000m, PayrollFrequency.Weekly, 3).Returns(144003.60);
+                    yield return new TestCaseData(100m, PayrollFrequency.Daily, 3).Returns(13988);
                 }
             }
         }

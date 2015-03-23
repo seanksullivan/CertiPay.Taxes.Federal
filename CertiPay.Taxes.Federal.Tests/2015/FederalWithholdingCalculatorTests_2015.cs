@@ -42,51 +42,51 @@ namespace CertiPay.Taxes.Federal.Tests
                 {
                     // Single
 
-                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.Single).Returns(42175.75);
-                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.Single).Returns(19775.75);
-                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.Single).Returns(7106.25);
-                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.Single).Returns(2864.25);
-                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.Single).Returns(22575.75);
-                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.Single).Returns(21175.47);
-                    yield return new TestCaseData(36900M, EmployeeTaxFilingStatus.Single).Returns(5081.25);
-                    yield return new TestCaseData(405100M, EmployeeTaxFilingStatus.Single).Returns(117541.25);
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.Single).Returns(42071.25);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.Single).Returns(19671.25);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.Single).Returns(7043.75);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.Single).Returns(2856.75);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.Single).Returns(22471.25);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.Single).Returns(21070.97m);
+                    yield return new TestCaseData(36900M, EmployeeTaxFilingStatus.Single).Returns(5073.75);
+                    yield return new TestCaseData(405100M, EmployeeTaxFilingStatus.Single).Returns(117289.25m);
                     yield return new TestCaseData(200M, EmployeeTaxFilingStatus.Single).Returns(20);
 
                     // Married Filing Jointly
 
-                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(36247.00);
-                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(15462.50);
-                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(5842.50);
-                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(2410.50);
-                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(17962.50);
-                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(16712.25);
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(36051.50);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(15337.50);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(5827.50);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(2395.50);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(17837.50);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.MarriedFilingJointly).Returns(16587.25);
 
                     // Married Filing Single
 
-                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(45702.25);
-                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(20223.50);
-                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(7106.25);
-                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(2864.25);
-                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(23023.50);
-                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(21623.22);
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(45514.50);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(20125.75);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(7043.75);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(2856.75);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(22925.75);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.MarriedFilingSeparately).Returns(21525.47);
 
                     // Widower -- Should match Married Filing Jointly
 
-                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(36247.00);
-                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(15462.50);
-                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(5842.50);
-                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(2410.50);
-                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(17962.50);
-                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(16712.25);
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(36051.50);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(15337.50);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(5827.50);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(2395.50);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(17837.50);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.WidowerWithDependentChild).Returns(16587.25);
 
                     // Head of Household
 
-                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(39586.00);
-                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(18162.50);
-                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(6102.50);
-                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(2670.50);
-                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(20662.50);
-                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(19412.25);
+                    yield return new TestCaseData(175000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(39484.50);
+                    yield return new TestCaseData(95000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(18072.50);
+                    yield return new TestCaseData(45000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(6092.50);
+                    yield return new TestCaseData(22120M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(2660.50);
+                    yield return new TestCaseData(105000M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(20572.50);
+                    yield return new TestCaseData(99999M, EmployeeTaxFilingStatus.HeadOfHousehold).Returns(19322.25);
 
                     // Should fail
 

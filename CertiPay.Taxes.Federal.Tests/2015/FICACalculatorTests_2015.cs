@@ -30,7 +30,7 @@ namespace CertiPay.Taxes.Federal.Tests
         [TestCase(74000, 4588)]
         [TestCase(36500, 2263)]
         [TestCase(116999, 7253.94)]
-        [TestCase(999999.99, 7254)]
+        [TestCase(999999.99, 7347)]
         public void Calculate_SS_Taxes(Decimal income, Decimal expectedTaxes)
         {
             var result = _calculator.Calculate(YEAR, income);
