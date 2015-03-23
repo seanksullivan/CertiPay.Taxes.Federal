@@ -29,8 +29,8 @@ namespace CertiPay.Taxes.Federal
                     // TODO: Need to double check these with the published IRS tables
 
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 0, Maximum = 9225, Base = 0, Percentage = 10},
-                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 9225, Maximum = 37451, Base = 922.50m, Percentage = 15},
-                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 37451, Maximum = 90750, Base = 5156.25m, Percentage = 25},
+                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 9225, Maximum = 37450, Base = 922.50m, Percentage = 15},
+                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 37450, Maximum = 90750, Base = 5156.25m, Percentage = 25},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 90750, Maximum = 189300, Base = 18481.25m, Percentage = 28},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 189300, Maximum = 411500, Base = 46075.25m, Percentage = 33},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 411500, Maximum = 413200, Base = 119401.25m, Percentage = 35},
