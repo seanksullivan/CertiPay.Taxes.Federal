@@ -31,9 +31,13 @@ namespace CertiPay.Taxes.Federal
 
             if (allowancesValue == null) throw new ArgumentOutOfRangeException("Unable to find tax table that matches parameters");
 
-            Decimal netPayForPeriod = grossIncomeForPeriod - (withholdingAllowances * allowancesValue.Value);
+            Decimal annualizedIncome = frequency.CalculateAnnualized(grossIncomeForPeriod);
 
-            return frequency.CalculateAnnualized(netPayForPeriod).Round();
+            Decimal allowances_per_period = withholdingAllowances * allowancesValue.Value;
+
+            Decimal value_of_allowances = frequency.CalculateAnnualized(allowances_per_period);
+
+            return annualizedIncome - value_of_allowances;
         }
     }
 }
