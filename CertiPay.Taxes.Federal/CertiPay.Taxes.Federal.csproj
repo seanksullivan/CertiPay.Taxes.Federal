@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CertiPay.Payroll.Common">
-      <HintPath>..\packages\CertiPay.Payroll.Common.1.0.12\lib\net451\CertiPay.Payroll.Common.dll</HintPath>
+    <Reference Include="CertiPay.Payroll.Common, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CertiPay.Payroll.Common.1.1.1\lib\net451\CertiPay.Payroll.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
