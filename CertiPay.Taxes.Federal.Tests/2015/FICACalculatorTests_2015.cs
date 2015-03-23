@@ -10,6 +10,31 @@ namespace CertiPay.Taxes.Federal.Tests
 
         private readonly IFICACalculator _calculator = new FICACalculator { };
 
+        [Theory]
+        public void Ensure_SSS_Employee_Matches_Employer([Random(0, 100000.00, 10)]Decimal income)
+        {
+            var result = _calculator.Calculate(YEAR, income);
+
+            Assert.AreEqual(result.SocialSecurity, result.SocialSecurity_Employer);
+        }
+
+        [Theory]
+        public void Ensure_Medicare_Employee_Matches_Employer([Random(0, 100000.00, 10)]Decimal income)
+        {
+            var result = _calculator.Calculate(YEAR, income);
+
+            Assert.AreEqual(result.Medicare_Employer, result.Medicare);
+        }
+
+        [Theory]
+        public void Ensure_SS_Wage_Base_Applied([Random(100000.00, 100000.00, 25)]Decimal income)
+        {
+            var result = _calculator.Calculate(YEAR, income);
+
+            Assert.That(result.SocialSecurity, Is.AtMost(7347));
+            Assert.That(result.SocialSecurity_Employer, Is.AtMost(7347));
+        }
+
         [Test]
         [TestCase(15000, 217.50)]
         [TestCase(74000, 1073)]
