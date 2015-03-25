@@ -86,15 +86,17 @@ namespace CertiPay.Taxes.Federal
 
             if (table == null) throw new ArgumentOutOfRangeException("Unable to find tax table that matches parameters");
 
-            Decimal fica_taxable = Math.Min(table.SocialSecurityWageBase, adjustedGrossIncome);
-
             // TODO We're not taking into account the Medicare Surtax (0.9% for income over $200k) that was implemented as part of the ACA in tax years 2013+
 
             var result = new FICAResult { };
 
-            result.SocialSecurity = (fica_taxable * (table.FICA_EmployeePercentage / 100)).Round();
+            Decimal social_security_taxable = Math.Min(table.SocialSecurityWageBase, adjustedGrossIncome);
 
-            result.SocialSecurity_Employer = (fica_taxable * (table.FICA_EmployerPercentage / 100)).Round();
+            result.SocialSecurity = (social_security_taxable * (table.FICA_EmployeePercentage / 100)).Round();
+
+            result.SocialSecurity_Employer = (social_security_taxable * (table.FICA_EmployerPercentage / 100)).Round();
+
+            // Medicare does not have a "wage base", it's applicable to all earned income
 
             result.Medicare = result.Medicare_Employer = (adjustedGrossIncome * (table.MedicarePercentage / 100)).Round();
 
