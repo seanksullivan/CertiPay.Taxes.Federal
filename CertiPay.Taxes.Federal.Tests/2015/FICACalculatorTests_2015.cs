@@ -11,7 +11,7 @@ namespace CertiPay.Taxes.Federal.Tests
         private readonly IFICACalculator _calculator = new FICACalculator { };
 
         [Theory]
-        public void Ensure_SSS_Employee_Matches_Employer([Random(0, 100000.00, 10)]Decimal income)
+        public void Ensure_SS_Employee_Matches_Employer([Random(0, 1000000.00, 10)]Decimal income)
         {
             var result = _calculator.Calculate(YEAR, income);
 
@@ -19,7 +19,7 @@ namespace CertiPay.Taxes.Federal.Tests
         }
 
         [Theory]
-        public void Ensure_Medicare_Employee_Matches_Employer([Random(0, 100000.00, 10)]Decimal income)
+        public void Ensure_Medicare_Employee_Matches_Employer([Random(0, 1000000.00, 10)]Decimal income)
         {
             var result = _calculator.Calculate(YEAR, income);
 
@@ -27,12 +27,14 @@ namespace CertiPay.Taxes.Federal.Tests
         }
 
         [Theory]
-        public void Ensure_SS_Wage_Base_Applied([Random(100000.00, 100000.00, 25)]Decimal income)
+        public void Ensure_SS_Wage_Base_Applied([Random(0, 1000000.00, 25)]Decimal income)
         {
             var result = _calculator.Calculate(YEAR, income);
 
-            Assert.That(result.SocialSecurity, Is.AtMost(7347));
-            Assert.That(result.SocialSecurity_Employer, Is.AtMost(7347));
+            // Maximum for 2015 is $7,347.00, regardless of income
+
+            Assert.That(result.SocialSecurity, Is.GreaterThanOrEqualTo(0).And.AtMost(7347));
+            Assert.That(result.SocialSecurity_Employer, Is.GreaterThanOrEqualTo(0).And.AtMost(7347));
         }
 
         [Test]
