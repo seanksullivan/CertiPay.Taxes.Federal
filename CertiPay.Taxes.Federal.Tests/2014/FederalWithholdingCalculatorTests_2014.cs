@@ -18,6 +18,22 @@ namespace CertiPay.Taxes.Federal.Tests
             Assert.NotNull(_calculator.Calculate(YEAR, 1000));
         }
 
+        [Test]
+        public void Should_Return_No_Withholding_For_Single(
+            [Values(EmployeeTaxFilingStatus.Single, EmployeeTaxFilingStatus.MarriedFilingSeparately, EmployeeTaxFilingStatus.HeadOfHousehold)] EmployeeTaxFilingStatus status,
+            [Random(0, 2250, 5)] Decimal annualIncome)
+        {
+            Assert.That(_calculator.Calculate(YEAR, annualIncome, status), Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Should_Return_No_Withholding_For_Married(
+            [Values(EmployeeTaxFilingStatus.MarriedFilingJointly, EmployeeTaxFilingStatus.WidowerWithDependentChild)] EmployeeTaxFilingStatus status,
+            [Random(0, 8450, 5)] Decimal annualIncome)
+        {
+            Assert.That(_calculator.Calculate(YEAR, annualIncome, status), Is.EqualTo(0));
+        }
+
         [Test, TestCaseSource(typeof(TestCases), "Tests")]
         public Decimal Verify_Withholding(Decimal annualIncome, EmployeeTaxFilingStatus status)
         {
