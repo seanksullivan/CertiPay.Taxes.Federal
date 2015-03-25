@@ -35,7 +35,7 @@ namespace CertiPay.Taxes.Federal
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 413800, Maximum = 415500, Base = 119401.25m, Percentage = 35},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 415500, Maximum = decimal.MaxValue, Base = 119996.25m, Percentage = 39.6m},
 
-                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 0, Maximum = 8600, Base = 0, Percentage = 10},
+                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 0, Maximum = 8600, Base = 0, Percentage = 0},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 8600, Maximum = 27050, Base = 0, Percentage = 10},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 27050, Maximum = 83500, Base = 1845.00m, Percentage = 15},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 83500, Maximum = 159800, Base = 10312.50m, Percentage = 25},
@@ -44,7 +44,7 @@ namespace CertiPay.Taxes.Federal
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 420100, Maximum = 473450, Base = 111324.00m, Percentage = 35},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.MarriedFilingJointly, Minimum = 473450, Maximum = decimal.MaxValue, Base = 129996.50m, Percentage = 39.6m},
 
-                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 0, Maximum = 8600, Base = 0, Percentage = 10},
+                    new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 0, Maximum = 8600, Base = 0, Percentage = 0},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 8600, Maximum = 27050, Base = 0, Percentage = 10},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 27050, Maximum = 83500, Base = 1845.00m, Percentage = 15},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.WidowerWithDependentChild, Minimum = 83500, Maximum = 159800, Base = 10312.50m, Percentage = 25},
