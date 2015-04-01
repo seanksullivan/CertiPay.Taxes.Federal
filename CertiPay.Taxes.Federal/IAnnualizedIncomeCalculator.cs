@@ -37,7 +37,10 @@ namespace CertiPay.Taxes.Federal
 
             Decimal value_of_allowances = frequency.CalculateAnnualized(allowances_per_period);
 
-            return annualizedIncome - value_of_allowances;
+            // Annualized income cannot be less than 0. If the calculated income is less than the value of the allowances
+            // then the employee will have no withholdings taken out.
+
+            return Math.Max(annualizedIncome - value_of_allowances, 0);
         }
     }
 }
