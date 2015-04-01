@@ -7,7 +7,9 @@ namespace CertiPay.Taxes.Federal
     public interface IAnnualizedIncomeCalculator
     {
         /// <summary>
-        /// Calculate the annualized income minus any withholding allowances claimed
+        /// Calculate the annualized income minus any withholding allowances claimed.
+        /// If the annualized income is less then the value of the allowances claimed, then Calculate
+        /// will return 0 (it will never return a negative number).
         /// </summary>
         Decimal Calculate(int year, Decimal grossIncomeForPeriod, PayrollFrequency frequency, int withholdingAllowances = 0);
     }
