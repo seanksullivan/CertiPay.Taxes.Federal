@@ -27,7 +27,18 @@ namespace CertiPay.Taxes.Federal.Tests
 
             Decimal expected = frequency.CalculateAnnualized(payperiodIncome) - (withholdingAllowances * allowance_value_annual);
 
+            Assume.That(expected > 0);
+
             Assert.That(_calculator.Calculate(YEAR, payperiodIncome, frequency, withholdingAllowances), Is.EqualTo(expected).Within(tolerance));
+        }
+
+        [Test]
+        [TestCase(500, PayrollFrequency.Monthly, 5)]
+        [TestCase(3000, PayrollFrequency.Annually, 1)]
+        [TestCase(3000, PayrollFrequency.Annually, 1)]
+        public void Should_Not_Have_Negative_Annualized_Income(Decimal payperiodIncome, PayrollFrequency frequency, int withholdingAllowances)
+        {
+            Assert.AreEqual(0, _calculator.Calculate(YEAR, payperiodIncome, frequency, withholdingAllowances));
         }
 
         [Test, TestCaseSource(typeof(TestCases), "Tests")]
