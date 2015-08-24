@@ -14,6 +14,11 @@ namespace CertiPay.Taxes.Federal
         /// Note that these taxes are "reduced" by a set percentage paid to the state fund for unemployment.
         /// </summary>
         Decimal Calculate(int year, Decimal adjustedGrossIncome);
+
+        /// <summary>
+        /// Returns the wage base for the given year
+        /// </summary>
+        Decimal GetWageBase(int year);
     }
 
     public class FUTACalculator : IFUTACalculator
@@ -44,6 +49,13 @@ namespace CertiPay.Taxes.Federal
             Decimal taxable = Math.Min(table.FUTA_WageBase, adjustedGrossIncome);
 
             return (taxable * (table.FUTA_EmployerPercentage / 100)).Round();
+        }
+
+        public Decimal GetWageBase(int year)
+        {
+            TaxTable table = TaxTables.Values.Single(t => t.Year == year);
+
+            return table.FUTA_WageBase;
         }
     }
 }
