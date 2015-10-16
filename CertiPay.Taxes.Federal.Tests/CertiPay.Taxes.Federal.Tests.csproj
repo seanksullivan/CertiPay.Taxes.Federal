@@ -55,7 +55,6 @@
     <Compile Include="2015\FICACalculatorTests_2015.cs" />
     <Compile Include="2015\FUTACalculatorTests_2015.cs" />
     <Compile Include="FederalWithholdingCalculatorTests.cs" />
-    <Compile Include="2013\FICACalculatorTests_2013.cs" />
     <Compile Include="2014\FICACalculatorTests_2014.cs" />
     <Compile Include="2014\FUTACalculatorTests_2014.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
