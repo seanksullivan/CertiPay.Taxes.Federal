@@ -6,8 +6,6 @@ namespace CertiPay.Taxes.Federal
 {
     public static class TaxTables
     {
-        // TODO Update this when the other tables are filled in
-
         public const int Minimum_Year = 2013;
 
         /// <summary>
@@ -21,7 +19,8 @@ namespace CertiPay.Taxes.Federal
                 {
                     new TaxTable2013(),
                     new TaxTable2014(),
-                    new TaxTable2015()
+                    new TaxTable2015(),
+                    new TaxTable2016()
                 };
             }
         }
@@ -65,7 +64,7 @@ namespace CertiPay.Taxes.Federal
         Decimal MedicarePercentage { get; }
 
         /// <summary>
-        /// The percentage of Federal Unemployment Insurnace Tax charged to the employer
+        /// The percentage of Federal Unemployment Insurance Tax charged to the employer
         /// </summary>
         Decimal FUTA_EmployerPercentage { get; }
 
