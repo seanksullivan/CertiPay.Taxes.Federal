@@ -38,7 +38,11 @@ namespace CertiPay.Taxes.Federal
         //tax rate after credit is 0.6%. You are entitled to the maximum credit if you paid your state unemployment taxes in
         //full, on time, and on all the same wages as are subject to FUTA tax, and as long as the state is not determined to
         //be a credit reduction state. See the Instructions for Form 940 to determine the credit.
-        //In some states, the wages subject to state unemployment tax are the same as the wages subject to FUTA tax. However, certain states exclude some types of wages from state unemployment tax, even though they are subject to FUTA tax (for example, wages paid to corporate officers, certain payments of sick pay by unions, and certain fringe benefits). In such a case, you may be required to deposit more than 0.6% FUTA tax on those wages. See the Instructions for Form 940 for further guidance.
+
+        //In some states, the wages subject to state unemployment tax are the same as the wages subject to FUTA tax.
+        //However, certain states exclude some types of wages from state unemployment tax, even though they are subject to FUTA tax
+        //(for example, wages paid to corporate officers, certain payments of sick pay by unions, and certain fringe benefits).
+        //In such a case, you may be required to deposit more than 0.6% FUTA tax on those wages. See the Instructions for Form 940 for further guidance.
 
         // 2015, the FUTA Tax Rate remains 6.0%
 
