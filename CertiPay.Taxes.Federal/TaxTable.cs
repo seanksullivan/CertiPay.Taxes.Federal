@@ -64,7 +64,8 @@ namespace CertiPay.Taxes.Federal
         Decimal MedicarePercentage { get; }
 
         /// <summary>
-        /// The percentage of Federal Unemployment Insurance Tax charged to the employer
+        /// The percentage of Federal Unemployment Insurance Tax charged to the employer, represents the
+        /// rate after applying the credit for SUI taxes paid
         /// </summary>
         Decimal FUTA_EmployerPercentage { get; }
 

@@ -13,7 +13,7 @@ namespace CertiPay.Taxes.Federal.Tests
         [Theory]
         public void Ensure_Does_Not_Pass_Wage_Base_Threshold([Random(0, 1000000.00, 20)]Decimal income)
         {
-            Decimal max_futa_for_year = 740; // 7000 wage base x 6%
+            Decimal max_futa_for_year = 42; // 7000 wage base x .6%
 
             Assert.That(_calculator.Calculate(YEAR, income), Is.AtMost(max_futa_for_year));
         }
