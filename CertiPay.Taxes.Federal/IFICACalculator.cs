@@ -9,13 +9,13 @@ namespace CertiPay.Taxes.Federal
     /// </summary>
     public class FICAResult
     {
-        public Decimal Medicare { get; set; }
+        public Decimal Medicare { get; internal set; }
 
-        public Decimal SocialSecurity { get; set; }
+        public Decimal SocialSecurity { get; internal set; }
 
-        public Decimal Medicare_Employer { get; set; }
+        public Decimal Medicare_Employer { get; internal set; }
 
-        public Decimal SocialSecurity_Employer { get; set; }
+        public Decimal SocialSecurity_Employer { get; internal set; }
     }
 
     /// <summary>
@@ -76,7 +76,7 @@ namespace CertiPay.Taxes.Federal
 
         public FICAResult Calculate(int year, decimal adjustedGrossIncome)
         {
-            // TODO We don't handle self-employed poeple here
+            // TODO We don't handle self-employed people here
 
             if (year < TaxTables.Minimum_Year) throw new ArgumentOutOfRangeException("Unable to process tax years before " + TaxTables.Minimum_Year);
 
