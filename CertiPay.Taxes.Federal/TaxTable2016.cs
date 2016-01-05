@@ -26,8 +26,6 @@ namespace CertiPay.Taxes.Federal
             {
                 return new[]
                 {
-                    // FIXME: These have not been updated for 2016 yet and reflect 2015 numbers
-
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 0, Maximum = 2250, Base = 0, Percentage = 0},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 2250, Maximum = 11525, Base = 0, Percentage = 10},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.Single, Minimum = 11525, Maximum = 39900, Base = 927.50m, Percentage = 15},
@@ -72,7 +70,6 @@ namespace CertiPay.Taxes.Federal
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.HeadOfHousehold, Minimum = 192400, Maximum = 415600, Base = 46278.75m, Percentage = 33},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.HeadOfHousehold, Minimum = 415600, Maximum = 417300, Base = 119934.75m, Percentage = 35},
                     new TaxTableEntry{ TaxFilingStatus = EmployeeTaxFilingStatus.HeadOfHousehold, Minimum = 417300, Maximum = decimal.MaxValue, Base = 120529.75m, Percentage = 39.6m},
-
                 };
             }
         }
@@ -83,16 +80,14 @@ namespace CertiPay.Taxes.Federal
             {
                 //From the IRS Circular E Employer's Tax Guide
 
-                // FIXME: These have not been updated for 2016 yet and reflect 2015 numbers
-
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Weekly, Value = 76.90m };
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.BiWeekly, Value = 153.80m };
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.SemiMonthly, Value = 166.70m };
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Monthly, Value = 333.30m };
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Quarterly, Value = 1000.00m };
-                //yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Semiannually, Value = 2000.00m };
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Annually, Value = 4000.00m };
-                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Daily, Value = 15.40m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Weekly, Value = 77.90m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.BiWeekly, Value = 155.80m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.SemiMonthly, Value = 168.80m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Monthly, Value = 337.50m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Quarterly, Value = 1012.50m };
+                //yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Semiannually, Value = 2025.00m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Annually, Value = 4050.00m };
+                yield return new AllowanceValue { PayrollFrequency = PayrollFrequency.Daily, Value = 15.60m };
             }
         }
     }
