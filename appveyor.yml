@@ -7,7 +7,7 @@
 #   - Section names should be unique on each level.
 
 # version format
-version: 1.0.{build}
+version: 2017.0.{build}
 
 shallow_clone: true
 
@@ -20,10 +20,6 @@ platform: Any CPU
 
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
-
-# to run your custom scripts instead of automatic MSBuild
-build_script:
-  - cmd: .\build.bat Package
 
 assembly_info:
   patch: true
