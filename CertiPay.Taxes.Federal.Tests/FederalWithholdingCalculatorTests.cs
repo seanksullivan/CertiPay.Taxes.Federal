@@ -7,22 +7,22 @@ namespace CertiPay.Taxes.Federal.Tests
     {
         private readonly IFederalWithholdingCalculator _calculator = new FederalWithholdingCalculator { };
 
-        [Test, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [Test]
         public void Verify_Invalid_Year()
         {
-            _calculator.Calculate(1965, 100);
+            Assert.Throws<ArgumentOutOfRangeException>(() => _calculator.Calculate(1965, 100));
         }
 
-        [Test, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [Test]
         public void Verify_Negative_Income()
         {
-            _calculator.Calculate(2013, -10);
+            Assert.Throws<ArgumentOutOfRangeException>(() => _calculator.Calculate(2013, -10));
         }
 
-        [Test, ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [Test]
         public void Verify_Year_Without_Tables()
         {
-            _calculator.Calculate(2050, 100);
+            Assert.Throws<ArgumentOutOfRangeException>(() => _calculator.Calculate(2050, 100));
         }
     }
 }
