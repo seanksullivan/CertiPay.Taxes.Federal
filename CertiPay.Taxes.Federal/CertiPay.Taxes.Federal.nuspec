@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>CertiPay.Taxes.Federal</id>
-    <version>0.0.1</version>
-    <title>CertiPay.Taxes.Federal</title>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$id$</title>
     <tags>taxes, tax, payroll</tags>
     <description>This library is intended to encapsulate the federal tax withholding tables for payroll.</description>
-    <projectUrl>https://github.com/CertiPay/Certipay.Federal.Taxes</projectUrl>
-    <licenseUrl>https://github.com/CertiPay/Certipay.Federal.Taxes/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/CertiPay/$id$</projectUrl>
+    <licenseUrl>https://github.com/CertiPay/$id$/blob/master/LICENSE.md</licenseUrl>
     <authors>CertiPay, Matt Wagner</authors>
     <owners>Matt Wagner</owners>
 
     <dependencies>
-      <dependency id="CertiPay.Payroll.Common" version="1.1.0" />
+      <dependency id="CertiPay.Payroll.Common" version="1.1.10" />
     </dependencies>
   </metadata>
 
   <files>
-    <file src="bin\Release\CertiPay.Taxes.Federal*" target="lib\net451" />
+    <file src="bin\$configuration$\$id$.dll" target="lib\net451" />
     <file src="..\README.md" target="tools" />
     <file src="..\LICENSE.md" target="tools" />
   </files>

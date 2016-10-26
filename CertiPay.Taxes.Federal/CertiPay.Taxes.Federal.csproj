@@ -62,6 +62,7 @@
     <Compile Include="TaxTableEntry.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CertiPay.Taxes.Federal.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
