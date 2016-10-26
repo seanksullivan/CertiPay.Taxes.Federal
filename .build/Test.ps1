@@ -19,7 +19,7 @@ $SolutionRoot = (Split-Path -parent $Here)
 $NuGet = Join-Path $SolutionRoot ".nuget\nuget.exe"
 
 $NUnitVersion = "3.5.0"
-$NUnit = Join-Path $SolutionRoot "packages\NUnit.Console.$NUnitVersion\tools\nunit3-console.exe"
+$NUnit = Join-Path $SolutionRoot "packages\NUnit.ConsoleRunner.$NUnitVersion\tools\nunit3-console.exe"
 
 # Get any assembly matching "CertiPay.*.Tests.dll" for now
 
