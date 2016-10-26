@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaxTable.cs" />
     <Compile Include="TaxTable2013.cs" />
+    <Compile Include="TaxTable2017.cs" />
     <Compile Include="TaxTable2016.cs" />
     <Compile Include="TaxTable2015.cs" />
     <Compile Include="TaxTable2014.cs" />
