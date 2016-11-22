@@ -10,9 +10,7 @@ $ErrorActionPreference = "Stop"
 
 $Here = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$SolutionRoot = (Split-Path -parent $Here)
-
-$SolutionFile = Join-Path $SolutionRoot "CertiPay.Taxes.Federal.sln"
+$SolutionFile = Join-Path $Here "CertiPay.Taxes.Federal.sln"
 
 # Bootstap ensures we have what we need to build the project
 
