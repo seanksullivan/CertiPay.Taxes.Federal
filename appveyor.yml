@@ -29,10 +29,16 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 before_build:
-- cmd: nuget restore
+- dotnet restore -v Minimal
 
-build:
-  publish_nuget: true
+build_script:
+- dotnet build */**/project.json --configuration %CONFIGURATION%
+
+after_build:
+- dotnet pack "CertiPay.Taxes.Federal" --configuration %CONFIGURATION% -o artifacts
+
+artifacts:
+- path: artifacts\**\*.*
 
 #---------------------------------#
 #       tests configuration       #
@@ -40,7 +46,7 @@ build:
 
 test:
   assemblies:
-    - CertiPay.Taxes.Federal.Tests.dll
+    - '**\bin\$(Configuration)\**\win7-x64\CertiPay.**.Tests.dll'
 
 #---------------------------------#
 #       artifacts configuration   #
