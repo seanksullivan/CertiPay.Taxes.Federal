@@ -24,8 +24,7 @@
       "imports": "dnxcore50",
       "dependencies": {
         "Microsoft.CSharp": "4.0.1",
-        "System.Linq": "4.3.0",
-        "System.Text.RegularExpressions": "4.1.0"
+        "System.Linq": "4.3.0"
       }
     }
   }
