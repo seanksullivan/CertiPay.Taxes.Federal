@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "NUnit": "3.5.0",
+    "NUnit.Console": "3.5.0",
+    "dotnet-test-nunit": "3.4.0-beta-3",
+    "CertiPay.Taxes.Federal": {
+      "target": "project"
+    }
+  },
+  "frameworks": {
+    "net461": {}
+  },
+  "testRunner": "nunit",
+  "version": "1.0.0-*"
+}
