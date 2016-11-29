@@ -53,7 +53,7 @@ namespace CertiPay.Taxes.Federal.Tests._2017
                     // Head of Household
 
                     yield return new TestCaseData(13350, EmployeeTaxFilingStatus.HeadOfHousehold, 1335m);
-                    yield return new TestCaseData(40198, EmployeeTaxFilingStatus.HeadOfHousehold, 5788.25m);
+                    yield return new TestCaseData(40198, EmployeeTaxFilingStatus.HeadOfHousehold, 5362.20m);
                     yield return new TestCaseData(123456, EmployeeTaxFilingStatus.HeadOfHousehold, 25116.50m);
                 }
             }
