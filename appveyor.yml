@@ -23,6 +23,7 @@ configuration: Release
 
 before_build:
 - dotnet restore -v Minimal
+- ps: .\Update-Version.ps1 -Version $env:APPVEYOR_BUILD_VERSION
 
 build_script:
 - dotnet build */**/project.json --configuration %CONFIGURATION%
