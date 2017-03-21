@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D86F8028-EA6D-4827-BD16-9AB85CD6C51F}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,9 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{5BB1B9
 		Update-Version.ps1 = Update-Version.ps1
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CertiPay.Taxes.Federal.Tests", "CertiPay.Taxes.Federal.Tests\CertiPay.Taxes.Federal.Tests.xproj", "{99313E4D-0C21-4751-B372-A9622D66D392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertiPay.Taxes.Federal.Tests", "CertiPay.Taxes.Federal.Tests\CertiPay.Taxes.Federal.Tests.csproj", "{99313E4D-0C21-4751-B372-A9622D66D392}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CertiPay.Taxes.Federal", "CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.xproj", "{80BAA84D-8245-4078-8B36-E5DC1EDC5B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertiPay.Taxes.Federal", "CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.csproj", "{80BAA84D-8245-4078-8B36-E5DC1EDC5B5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>This library is intended to hold some common items related to payroll processing, such as tax filing status or frequency.</Description>
+    <VersionPrefix>2017.0.12</VersionPrefix>
+    <TargetFrameworks>net461;netstandard1.6</TargetFrameworks>
+    <AssemblyName>CertiPay.Taxes.Federal</AssemblyName>
+    <PackageId>CertiPay.Taxes.Federal</PackageId>
+    <PackageTags>certipay;payroll;taxes</PackageTags>
+    <PackageLicenseUrl>https://github.com/CertiPay/CertiPay.Taxes.Federal/blob/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/CertiPay/CertiPay.Taxes.Federal</RepositoryUrl>
+    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CertiPay.Payroll.Common" Version="2.1.*" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
