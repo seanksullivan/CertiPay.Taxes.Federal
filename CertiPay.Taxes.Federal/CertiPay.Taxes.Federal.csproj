@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>This library is intended to hold some common items related to payroll processing, such as tax filing status or frequency.</Description>
+    <Description>A common library for calculating Federal payroll withholding</Description>
     <VersionPrefix>2017.0.12</VersionPrefix>
     <TargetFrameworks>net461;netstandard1.6</TargetFrameworks>
     <AssemblyName>CertiPay.Taxes.Federal</AssemblyName>
