@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertiPay.Taxes.Federal.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertiPay.Taxes.Federal", "CertiPay.Taxes.Federal\CertiPay.Taxes.Federal.csproj", "{80BAA84D-8245-4078-8B36-E5DC1EDC5B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertiPay.Taxes.Federal.UnitTests", "CertiPay.Taxes.Federal.UnitTests\CertiPay.Taxes.Federal.UnitTests.csproj", "{33CE05C9-FB84-4E8F-8D73-FBE91ACDB793}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertiPay.Taxes.Federal.MSTests", "CertiPay.Taxes.Federal.MSTests\CertiPay.Taxes.Federal.MSTests.csproj", "{C8CEDCE5-151E-4BFA-9DA3-B0FAA6906B9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +40,10 @@ Global
 		{80BAA84D-8245-4078-8B36-E5DC1EDC5B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80BAA84D-8245-4078-8B36-E5DC1EDC5B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80BAA84D-8245-4078-8B36-E5DC1EDC5B5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33CE05C9-FB84-4E8F-8D73-FBE91ACDB793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33CE05C9-FB84-4E8F-8D73-FBE91ACDB793}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33CE05C9-FB84-4E8F-8D73-FBE91ACDB793}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33CE05C9-FB84-4E8F-8D73-FBE91ACDB793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CEDCE5-151E-4BFA-9DA3-B0FAA6906B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CEDCE5-151E-4BFA-9DA3-B0FAA6906B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CEDCE5-151E-4BFA-9DA3-B0FAA6906B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CEDCE5-151E-4BFA-9DA3-B0FAA6906B9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
