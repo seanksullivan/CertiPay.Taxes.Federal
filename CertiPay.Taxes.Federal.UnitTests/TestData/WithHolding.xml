@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<WithHoldingTests>
-  <WithHolding>
-    <AnnualIncome>9325</AnnualIncome>
-    <Status>Single</Status>
-    <Expected>702.50</Expected>
-  </WithHolding>
-</WithHoldingTests>
