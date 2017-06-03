@@ -60,6 +60,12 @@
     <Reference Include="System.Text.RegularExpressions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2015\AnnualizedIncomeCalculatorTests_2015.cs" />
+    <Compile Include="2015\FederalWithholdingCalculatorTests_2015.cs" />
+    <Compile Include="2015\FICACalculatorTests_2015.cs" />
+    <Compile Include="2015\FUTACalculatorTests_2015.cs" />
+    <Compile Include="Extensions\IterativeTestMethodAttribute.cs" />
+    <Compile Include="FederalWithholdingCalculatorTests.cs" />
     <Compile Include="TaxTableTests_2017.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

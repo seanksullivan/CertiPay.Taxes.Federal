@@ -1,11 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CertiPay.Payroll.Common;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CertiPay.Taxes.Federal.MSTests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
-    public class TaxTableTests4_2017
+    public class TaxTableTests_2017
     {
         private TestContext testContextInstance;
         public TestContext TestContext
