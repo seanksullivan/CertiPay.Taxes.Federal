@@ -26,18 +26,4 @@ namespace CertiPay.Taxes.Federal.MSTests.Extensions
             return results.ToArray();
         }
     }
-
-    public class CustomDataRowAttribute : DataRowAttribute
-    {
-        public CustomDataRowAttribute(object data1) : base(data1)
-        {
-
-        }
-
-
-        public CustomDataRowAttribute(object data1, params object[] moreData) : base(data1, moreData)
-        {
-
-        }
-    }
 }
