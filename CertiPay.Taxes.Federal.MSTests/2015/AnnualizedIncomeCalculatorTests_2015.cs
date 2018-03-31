@@ -15,7 +15,36 @@ namespace CertiPay.Taxes.Federal.MSTests
     public class AnnualizedIncomeCalculatorTests_2015
     {
         private const int YEAR = 2015;
-        
+
+        [RetryTestMethod(true, 10)]
+        public void MySpecial_Test()
+        {
+            // ARRANGE
+            var calculator = new AnnualizedIncomeCalculator();
+            var random = new Random(int.Parse(Guid.NewGuid().ToString().Substring(0, 8), System.Globalization.NumberStyles.HexNumber));
+            const Decimal allowanceValueAnnual = 4000;
+            const Decimal tolerance = 50.00m;
+
+            // Set the random data
+            var payperiodIncome = Convert.ToDecimal(random.Next(0, 1000));
+            var withholdingAllowances = random.Next(0, 10);
+
+            var enumValues = Enum.GetValues(typeof(PayrollFrequency));
+            var frequency = (PayrollFrequency)enumValues.GetValue(random.Next(1, enumValues.Length));
+
+            // ACT
+            var allowance = (withholdingAllowances * allowanceValueAnnual);
+            var annualCalc = PayrollFrequencies.CalculateAnnualized(frequency, payperiodIncome);
+
+            var annualMinusWithHolding = (annualCalc - (withholdingAllowances * allowanceValueAnnual));
+            var calc = calculator.Calculate(YEAR, payperiodIncome, frequency, withholdingAllowances);
+
+            // ASSERT
+            Assert.IsTrue(annualMinusWithHolding > 0, $"Expected AnnualCalcMinusWithHolding greater than 0. AnnualCalcMinusWithHolding value:{annualMinusWithHolding}, Frequency:{frequency}");
+
+            Assert.AreEqual((float)annualMinusWithHolding, (float)calc, (float)tolerance, $"Expected:{annualMinusWithHolding}, Calculated:{calc}, Tolerance:{tolerance}");
+        }
+
         [IterativeTestMethod(100)]
         public void Verify_Approximate_Allowance_Value()
         {
