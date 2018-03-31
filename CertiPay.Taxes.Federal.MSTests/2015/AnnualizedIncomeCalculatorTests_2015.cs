@@ -16,7 +16,7 @@ namespace CertiPay.Taxes.Federal.MSTests
     {
         private const int YEAR = 2015;
 
-        [RetryTestMethod(true, 10)]
+        [RetryTestMethod(3)]
         public void MySpecial_Test()
         {
             // ARRANGE
